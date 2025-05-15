@@ -1,0 +1,39 @@
+<div class="flex-wrap justify-center mt-16">
+  <div [formGroup]="loginForm" class="space-y-10 bg-gray-50 p-10 w-[480px] mx-auto">
+    <div class="flex-col space-y-2 text-center">
+      <div class="font-bold text-2xl">Please Sign in</div>
+      <div class="font-semibold text-md">You need to Sign in first to continue</div>
+    </div>
+
+    <div class="flex gap-5 justify-center">
+      <button nz-button nzType="default" nzSize="large" (click)="signUpWithGoogle()">Sign-in With Google</button>
+    </div>
+
+    <nz-divider nzText="Or Sign In with"></nz-divider>
+
+    <div class="[&_label]:font-semibold text-md space-y-5">
+      <div class="space-y-1">
+        <label>Email</label>
+        <input nz-input nzSize="large" placeholder="example@gmail.com" formControlName="email" type="text" />
+      </div>
+
+      <div class="space-y-1">
+        <label>Password</label>
+        <input nz-input nzSize="large" placeholder="Your Password" formControlName="password" type="password" />
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button nz-button nzType="link" (click)="forgetPass()">Forget Password</button>
+    </div>
+
+    <div class="flex justify-center">
+      <button nz-button nzSize="large" (click)="submitSignIn()" [disabled]="loginForm.invalid">Sign In</button>
+    </div>
+
+    <div class="text-center">
+      Don't have an account ?
+      <a [routerLink]="['/signup']" class="text-sky-500 font-semibold">Sign Up</a>
+    </div>
+  </div>
+</div>
