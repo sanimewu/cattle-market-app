@@ -6,3 +6,6 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 
 json-server --watch db.json --port 3000
 http://localhost:3000/cattle
+
+## Live server
+https://cattle-market-app.web.app/
