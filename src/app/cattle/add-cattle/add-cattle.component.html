@@ -1,0 +1,57 @@
+<div class="font-bold text-lg text-center py-5">
+  Add New Cattle
+</div>
+<div class="container">
+  <form [formGroup]="cattleListForm">
+
+    <div class="grid grid-cols-1 space-y-2  gap-x-16 py-2 [&_label]:font-semibold">
+      <div class="grid grid-cols-1 items-center">
+        <label>Breed Name:</label>
+        <input nz-input placeholder="breed" formControlName="breed" type="text" maxlength="15"/>
+        <div class="text-red-500 text-sm" *ngIf="this.cattleListForm.controls['breed'].invalid && this.cattleListForm.controls['breed'].dirty">
+          Breed is invalid.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 items-center">
+        <label>Cattle weight:</label>
+        <input nz-input placeholder="weight" formControlName="weight" type="number" maxlength="2"/>
+        <div class="text-red-500 text-sm" *ngIf="this.cattleListForm.controls['weight'].invalid && this.cattleListForm.controls['weight'].dirty">
+          <div *ngIf="this.cattleListForm.controls['weight']?.errors?.['required']">Weight is required.</div>
+          <div *ngIf="this.cattleListForm.controls['weight']?.errors?.['min']">Minimum weight is 10 kg.</div>
+          <div *ngIf="this.cattleListForm.controls['weight']?.errors?.['max']">Max weight is 300 kg.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 space-y-2  gap-x-16 py-2 [&_label]:font-semibold">
+
+      <div class="grid grid-cols-1 items-center">
+        <label>Cattle Price:</label>
+        <input nz-input placeholder="price" formControlName="price" type="number" maxlength="6"/>
+        <div class="text-red-500 text-sm" *ngIf="this.cattleListForm.controls['price'].invalid && this.cattleListForm.controls['price'].dirty">
+          <div *ngIf="this.cattleListForm.controls['price']?.errors?.['required']">price is required.</div>
+          <div *ngIf="this.cattleListForm.controls['price']?.errors?.['min']">Minimum Price is 100 tk.</div>
+          <div *ngIf="this.cattleListForm.controls['price']?.errors?.['max']">Minimum Price is 1000000 tk</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 items-center">
+        <label>Market Status:</label>
+        <div>
+          <nz-select nzAllowClear formControlName="status">
+            <nz-option nzLabel="available"  nzValue="available"></nz-option>
+            <nz-option nzLabel="sold" nzValue="sold"></nz-option>
+          </nz-select>
+        </div>
+      </div>
+
+    </div>
+    <div class="flex justify-center py-5">
+      <button nz-button nzType="primary" [disabled]="cattleListForm.invalid" (click)="onSubmitList()">Submit</button>
+    </div>
+  </form>
+
+</div>
+

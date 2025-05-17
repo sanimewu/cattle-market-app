@@ -1,0 +1,22 @@
+<div class="py-2 grid grid-cols-3">
+  <div>
+    <a class="font-bold" [routerLink]="['/list']">Cattle Market App</a>
+  </div>
+
+  <div>
+    <nav>
+      <ul class="flex gap-3 font-medium justify-center">
+        <li><a [routerLink]="['/list']">Home</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div>
+    <nav>
+      <ul class="flex justify-end gap-3">
+        <button nz-button (click)="logOut()"> Log Out</button>
+      </ul>
+    </nav>
+  </div>
+
+</div>

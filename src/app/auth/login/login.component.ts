@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {NzDividerComponent} from 'ng-zorro-antd/divider';
-import {NzButtonComponent, NzButtonModule} from 'ng-zorro-antd/button';
+import {NzButtonModule} from 'ng-zorro-antd/button';
 import {NzInputDirective} from 'ng-zorro-antd/input';
 import {CommonModule} from '@angular/common';
 import {AuthService} from '../../service/auth.service';

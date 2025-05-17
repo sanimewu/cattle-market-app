@@ -1,0 +1,58 @@
+{
+  "cattle": [
+    {
+      "id": "3ce2",
+      "breed": "anything ",
+      "weight": 123,
+      "price": 3333,
+      "status": "available",
+      "date": "2025-05-17T15:06:09.268Z",
+      "username": "sanim.hossain@trucklagbe.com"
+    },
+    {
+      "id": "e8ff",
+      "breed": "sadad",
+      "weight": 34,
+      "price": 434,
+      "status": "available",
+      "date": "2025-05-17T15:06:20.956Z",
+      "username": "sanim.hossain@trucklagbe.com"
+    },
+    {
+      "breed": "fgfgf",
+      "weight": 58,
+      "price": 454,
+      "status": "available",
+      "date": "2025-05-17T15:06:57.132Z",
+      "username": "sanim.hossain@trucklagbe.com",
+      "id": "633f"
+    },
+    {
+      "id": "2a47",
+      "breed": "whoa",
+      "weight": 56,
+      "price": 565,
+      "status": "available",
+      "date": "2025-05-17T15:07:19.164Z",
+      "username": "sanim.hossain@trucklagbe.com"
+    },
+    {
+      "id": "f1f1",
+      "breed": "gfg",
+      "weight": 56,
+      "price": 656,
+      "status": "available",
+      "date": "2025-05-17T15:07:27.828Z",
+      "username": "sanim.hossain@trucklagbe.com"
+    },
+    {
+      "id": "0820",
+      "breed": "hfh",
+      "weight": 65,
+      "price": 5665,
+      "status": "available",
+      "date": "2025-05-17T15:07:49.604Z",
+      "username": "sanim.hossain@trucklagbe.com"
+    }
+  ]
+}

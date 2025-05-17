@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import {from, Observable} from 'rxjs';
-
+import { from, Observable } from 'rxjs';
 import {
   Auth,
   signInWithEmailAndPassword,
@@ -9,7 +8,7 @@ import {
   signInWithPopup,
   signOut,
   GoogleAuthProvider,
-  UserCredential
+  UserCredential,
 } from '@angular/fire/auth';
 
 @Injectable({
@@ -21,7 +20,11 @@ export class AuthService {
   constructor(private auth:Auth) { }
 
   signIn(params: SignIn): Observable<UserCredential> {
-    return from(signInWithEmailAndPassword(this.auth, params.email, params.password));
+    return from(signInWithEmailAndPassword(this.auth, params.email, params.password).then(cred => {
+          localStorage.setItem('userEmail', cred.user.email ?? '');
+          return cred;
+        })
+    );
   }
 
   signUp(params: SignIn): Observable<UserCredential> {
@@ -34,7 +37,11 @@ export class AuthService {
 
   googleSignUp(): Observable<UserCredential> {
     const provider = new GoogleAuthProvider();
-    return from(signInWithPopup(this.auth, provider));
+    return from(signInWithPopup(this.auth, provider).then(cred => {
+        localStorage.setItem('userEmail', cred.user.email ?? '');
+        return cred;
+      })
+    );
   }
 
   googleSignOut(): Observable<void> {
